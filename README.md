@@ -8,9 +8,11 @@ This example app shows how to build a basic CRUD app with Spring Boot 2.0, Sprin
 To install this example application, run the following commands:
 
 `git clone https://github.com/saurabhjaju2418/SpringBootRestApiWithAngular.git`
+
 `cd SpringBootRestApiWithAngular`
 
-This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions<br/> below.
+This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
+
 To run the server, cd into the `server` folder and run:
 
 `./mvnw spring-boot:run`
