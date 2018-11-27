@@ -2,7 +2,7 @@
 
 This example app shows how to build a basic CRUD app with Spring Boot 2.0, Spring Data, and Angular 5.0.
 
-## Prerequisites: [Java 8] (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Node.js](https://nodejs.org/en/).
+ <b>Prerequisites</b>: [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Node.js](https://nodejs.org/en/).
 
 ## Getting Started
 To install this example application, run the following commands:
