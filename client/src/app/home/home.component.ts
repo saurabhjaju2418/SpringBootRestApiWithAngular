@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OktaAuthService } from '@okta/okta-angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent {
-  title = 'app';
+export class HomeComponent implements OnInit {
+
   isAuthenticated: boolean;
 
   constructor(private oktaAuth: OktaAuthService) {
@@ -20,4 +20,5 @@ export class AppComponent {
       (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
     );
   }
+
 }
