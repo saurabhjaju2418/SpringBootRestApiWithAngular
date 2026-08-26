@@ -1,6 +1,6 @@
 package sj.sbRestApiWithAngular.demo;
 
-import java.util.stream.Stream;
+import java.util.List;
 
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,13 +20,12 @@ public class DemoApplication {
 	@Bean
     ApplicationRunner init(CarRepository repository) {
         return args -> {
-            Stream.of("Ferrari", "Jaguar", "Porsche", "Lamborghini", "Bugatti",
-                      "AMC Gremlin", "Triumph Stag", "Ford Pinto", "Yugo GV").forEach(name -> {
-                Car car = new Car();
-                car.setName(name);
-                repository.save(car);
-            });
-            repository.findAll().forEach(System.out::println);
+            if (repository.count() == 0) {
+                repository.saveAll(List.of(
+                    new Car("Ferrari"), new Car("Jaguar"), new Car("Porsche"),
+                    new Car("Lamborghini"), new Car("Bugatti")
+                ));
+            }
         };
     }
 }

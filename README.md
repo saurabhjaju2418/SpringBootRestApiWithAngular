@@ -1,44 +1,49 @@
-# Basic CRUD App with Angular 5.0 and Spring Boot 2.0
+# Car Catalog
 
-This example app shows how to build a basic CRUD app with Spring Boot 2.0, Spring Data, and Angular 5.0.
+A modern full-stack CRUD application built with Angular 22 and Spring Boot 4.
 
- <b>Prerequisites</b>: [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Node.js](https://nodejs.org/en/).
+## Technology stack
 
-## Getting Started
-To install this example application, run the following commands:
+- Angular 22 standalone components, signals, built-in control flow, and typed HTTP services
+- TypeScript 6, RxJS 7, Vitest, and pnpm
+- Spring Boot 4.1, Java 17, Jakarta Persistence, Bean Validation, and Maven
+- H2 for local development and Spring Boot Actuator health endpoints
+- GitHub Actions for frontend and backend validation
 
-`git clone https://github.com/saurabhjaju2418/SpringBootRestApiWithAngular.git`
+## Prerequisites
 
-`cd SpringBootRestApiWithAngular`
+- Node.js 24
+- pnpm 10
+- JDK 17 or newer
 
-This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
+## Run locally
 
-To run the server, cd into the `server` folder and run:
+Start the API:
 
-`./mvnw spring-boot:run`
+```bash
+cd server
+./mvnw spring-boot:run
+```
 
-To run the client, cd into the `client` folder and run:
+In another terminal, start the client:
 
-`npm install && npm start`
+```bash
+cd client
+pnpm install --frozen-lockfile
+pnpm start
+```
 
-## Code scaffolding
+Open `http://localhost:4200`. The Angular development server proxies `/api` requests to the API at `http://localhost:8080`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Verify
 
-## Build
+```bash
+cd server && ./mvnw verify
+cd ../client && pnpm install --frozen-lockfile && pnpm build && pnpm test -- --watch=false
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The API exposes CRUD operations at `/api/cars` and health information at `/actuator/health`.
 
-## Running unit tests
+## Migration notes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This release replaces the Angular 5/CLI 1/Karma/Protractor client and Spring Boot 2/Java 8 server. It also removes the obsolete hard-coded Okta development configuration. Authentication should be reintroduced with an environment-specific OpenID Connect setup if the application is deployed beyond this demonstration environment.
