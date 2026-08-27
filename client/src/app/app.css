@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+.shell-header {
+  align-items: center;
+  background: #101828;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+.brand {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  color: #d0d5dd;
+  text-decoration: none;
+}
+nav a.active,
+nav a:hover {
+  color: white;
+}
+.shell-content {
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 2rem;
+}
