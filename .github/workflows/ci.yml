@@ -42,4 +42,4 @@ jobs:
         run: pnpm build
       - name: Test Angular client
         working-directory: client
-        run: pnpm test -- --watch=false
+        run: pnpm test
